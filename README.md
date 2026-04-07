@@ -1,93 +1,27 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+ESCOPO DO PROJETO: FOXGUARD API
+1. Título do Projeto e Modelo de Negócio
+Título do Projeto: FoxGuard (Desenvolvido por HexaFox Solutions)
+Modelo de Negócio: Insurtech (Seguros para Eletrônicos). A proposta é oferecer uma plataforma ágil para o gerenciamento de apólices de seguro contra roubo, furto e danos, focada em dispositivos móveis e hardware de alto valor.
+2. Descrição Geral O FoxGuard é um sistema de backend robusto projetado para centralizar o controle de apólices de seguros eletrônicos. A aplicação permite que corretoras e parceiros de varejo realizem o ciclo completo de vida de um seguro: desde a emissão da apólice (vinculada ao código identificador único do aparelho) até consultas rápidas de conformidade e valor segurado. O objetivo principal é garantir a integridade dos dados e a rapidez na resposta para o cliente final.
+3. Entidade e Atributos A entidade principal mapeada no banco de dados (tb_seguros_eletronicos) contém os seguintes atributos obrigatórios:
+id (BIGINT / Primary Key): Identificador automático e único da apólice.
+cliente (VARCHAR / String): Nome completo do titular do seguro.
+aparelho (VARCHAR / String): Descrição do dispositivo segurado (ex: Samsung S24 Ultra).
+valor_apolice (DECIMAL 10,2 / Number): Valor monetário total da cobertura contratada.
+imei (VARCHAR / String): Código de identificação global do hardware (essencial para validação de sinistros).
+4. Funcionalidades Principais (CRUD) A API expõe os seguintes métodos para manipulação dos dados via protocolo HTTP:
+Create (POST): Cadastro de novas apólices de seguro eletrônico.
+Read (GET): Listagem de todos os registros e busca detalhada por ID individual.
+Update (PUT): Edição de informações da apólice (ex: correção de nome ou atualização de valor).
+Delete (DELETE): Exclusão definitiva de registros da base de dados.
+Consulta Customizada: Método findByImei — Funcionalidade que permite localizar uma apólice específica através do código identificador único do aparelho.
+5. Tecnologias Utilizadas
+Linguagem: TypeScript.
+Framework Backend: NestJS (Node.js).
+Persistência (ORM): TypeORM.
+Banco de Dados: MySQL, utilizando a tabela tb_seguros_eletronicos.
+Ferramenta de Testes: Insomnia.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ npm install
-```
-
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
 
 - Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
 - Website - [https://nestjs.com](https://nestjs.com/)
