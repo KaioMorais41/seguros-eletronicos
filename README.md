@@ -21,7 +21,7 @@
 
 # 📌 Sobre o Projeto
 
-O **FoxGuard API** é uma aplicação backend desenvolvida para o segmento **Insurtech**, focada no gerenciamento de seguros para dispositivos eletrônicos de alto valor.
+O **FoxGuard API** é uma aplicação backend desenvolvida para o segmento **Insurtech**, focada no gerenciamento de seguros para dispositivos eletrônicos.
 
 A plataforma foi criada para permitir o controle completo do ciclo de vida de uma apólice, desde o cadastro até consultas rápidas por IMEI, garantindo organização, rastreabilidade e segurança dos dados.
 
@@ -29,7 +29,7 @@ O projeto simula o funcionamento de uma seguradora digital especializada em:
 
 - 📱 Smartphones
 - 💻 Notebooks
-- 🎮 Hardwares premium
+- 🎮 Hardwares
 - 🖥️ Dispositivos eletrônicos em geral
 
 ---
